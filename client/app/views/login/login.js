@@ -1,14 +1,14 @@
-angular.module('myApp.addFlashcardPage', ['ngRoute'])
+angular.module('myApp.login', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/add-flashcard', {
-    authenticate: true,
-    templateUrl: 'view/add-flashcard/add-flashcard.html',
-    controller: 'addFlashcard'
+  $routeProvider.when('/login', {
+    authenticate: false,
+    templateUrl: 'views/login/login.html',
+    controller: 'loginController'
   });
 }])
 
-.controller('addFlashcard',
+.controller('loginController',
   ['$scope', '$http', 'FlashCards', 'Categories', '$location',
   function($scope, $http, FlashCards, Categories, $location) {
 

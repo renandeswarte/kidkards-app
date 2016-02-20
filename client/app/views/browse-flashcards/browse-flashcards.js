@@ -3,7 +3,7 @@ angular.module('myApp.browseFlashcardsPage', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/categories/:category', {
     authenticate: true,
-    templateUrl: 'view/browse-flashcards/browse-flashcards.html',
+    templateUrl: 'views/browse-flashcards/browse-flashcards.html',
     controller: 'browseFlashcards'
   });
 }])

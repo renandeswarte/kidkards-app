@@ -3,7 +3,7 @@ angular.module('myApp.matchingFlashcardsPage', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/matching-category/:category', {
     authenticate: true,
-    templateUrl: 'view/matching-flashcards/matching-flashcards.html',
+    templateUrl: 'views/matching-flashcards/matching-flashcards.html',
     controller: 'matchingCategory'
   });
 }])

@@ -3,7 +3,7 @@ angular.module('myApp.browseCategoriesPage', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/categories', {
     authenticate: true,
-    templateUrl: 'view/browse-categories/browse-categories.html',
+    templateUrl: 'views/browse-categories/browse-categories.html',
     controller: 'showCategories'
   });
 }])

@@ -3,7 +3,7 @@ angular.module('myApp.matchingCategoriesPage', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/matching-categories', {
     authenticate: true,
-    templateUrl: 'view/matching-categories/matching-categories.html',
+    templateUrl: 'views/matching-categories/matching-categories.html',
     controller: 'showMatchingCategories'
   });
 }])
