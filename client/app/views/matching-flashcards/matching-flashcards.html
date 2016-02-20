@@ -1,21 +1,29 @@
 <div class="container page matching-game-page fadein-effect">
 
-  <h1 class="page-title">Matching | Category : {{category}}</h1>
+  <h1 class="page-title">Matching | {{category}}</h1>
   <img id="loader" class="hidden" src="assets/pictures/loader.gif">
 
   <section class="setting-container">
     <p class="description">Select the number of cards</p>
     <div class="selection-container row">
-      <div class="choice small col-xs-12 col-sm-4 col-sm-offset-1" ng-click="getFlashCard(8)">
+    <div class="choice small col-xs-4 col-xs-offset-1" ng-click="getFlashCard(4)">
         <div class="choice-container">
-          <p class="number">8</p>
-          <p class="details">For smaller screens</p>
+          <p class="number">4</p>
         </div>
       </div>
-      <div class="choice large col-xs-12 col-sm-4 col-sm-offset-2" ng-click="getFlashCard(12)">
+      <div class="choice small col-xs-4 col-xs-offset-2" ng-click="getFlashCard(8)">
+        <div class="choice-container">
+          <p class="number">8</p>
+        </div>
+      </div>
+      <div class="choice large col-xs-4 col-xs-offset-1" ng-click="getFlashCard(12)">
         <div class="choice-container">
           <p class="number">12</p>
-          <p class="details">For bigger screens</p>
+        </div>
+      </div>
+      <div class="choice large col-xs-4 col-xs-offset-2" ng-click="getFlashCard(16)">
+        <div class="choice-container">
+          <p class="number">16</p>
         </div>
       </div>
     </div>
@@ -24,8 +32,8 @@
   <section class="replay-container hidden">
     <p class="congrats">Congratulations</p>
     <p class="description">You won in <span id="time-spent"></span> seconds !</p>
-    <a class="reload btn btn-primary" ng-click="reload()">Replay</a>
-    <a href="#/matching-categories" class="redirect btn btn-secondary">Change Category?</a>
+    <a class="reload btn btn-primary" ng-click="reload()"><span>Replay</span></a>
+    <a href="#/matching-categories" class="redirect btn btn-secondary"><span>Change</span></a>
   </section>
 
   <section class="row flashcards-container hidden">

@@ -1,11 +1,33 @@
 .home-page {
-  .flashcard-container {
-    article {
-      .card-category {
-        color: $lightGreyColor;
-        text-align: center;
-        margin-bottom: 5px;
+  .links-container {
+    .home-links {
+      margin-bottom: 15px;
+      padding-bottom: 35%;
+      position: relative;
+      span {
+        @include absolutePos(0px, 15px, 0px, 15px)
+        @include flexCenter();
+        @include border-radius(3px, 1px, $whiteColor);
+        @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.2));
+        font-size: 20px;
+        color: $whiteColor;
         font-weight: bold;
+
+      }
+      &.categories {
+        span {
+          background-color: #16A085;   
+        }
+      }
+      &.quizz {
+        span {
+          background-color: #00a1e0;   
+        }
+      }
+      &.matching {
+        span {
+          background-color: #E67E22;   
+        }
       }
     }
   }

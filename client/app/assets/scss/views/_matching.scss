@@ -14,22 +14,25 @@
     }
     .selection-container {
       .choice {
-        height: 150px;
-        @include flexCenter();
+        padding-bottom: 33.33%;
+        position: relative;
         @include border-radius(5px, 1px, $whiteColor);
         color: $whiteColor;
         &.small {
           background-color: $mainColor;
+          margin-bottom: 16.66%;
         }
         &.large {
           background-color: $greenColor;
         }
-        .number {
-          font-size: 40px;
-          font-weight: bold;
-        }
-        .details {
-          font-size: 10px;
+        .choice-container {
+          @include flexCenter();
+          @include absolutePos(0px,0px,0px,0px)
+          .number {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 0px;
+          }
         }
       }
     }
@@ -55,10 +58,20 @@
       }
     }
     a {
+      @include border-radius(50%, 1px, $whiteColor);
+      position: relative;
+      width: 80px;
+      height: 80px;
+      font-weight: bold;
       &.redirect {
+        margin-left: 20px;
         &:hover {
           color: $whiteColor;
         }
+      }
+      span {
+        @include absolutePos(0px, 0px, 0px, 0px)
+        @include flexCenter();
       }
     }
   }
