@@ -1,8 +1,12 @@
-<div class="flashcard"  ng-class=" {{value.isImg}} ? 'flashcard-img' : 'flashcard-text'" ng-controller="updateDeleteController">
-<!-- Default template for flashcards -->
+<div class="flashcard" ng-class=" {{value.isImg}} ? 'flashcard-img' : 'flashcard-text'" ng-controller="updateDeleteController">
+  <!-- Default template for flashcards -->
+  <div class="expand-options">
+    <i class="fa fa-expand"></i>
+    <i class="fa fa-compress"></i>
+  </div>
 
   <div class="top-container">
-    <div class="picture-container inner-top-container" ng-show="{{value.isImg}}" ng-style="{'background-image':'url({{ value.picture }})'}"> 
+    <div class="picture-container inner-top-container" ng-show="{{value.isImg}}" ng-style="{'background-image':'url({{ value.picture }})'}" onclick=""> 
     </div>
 
     <div class="term-container inner-top-container" ng-hide="{{value.isImg}}">
@@ -11,7 +15,9 @@
   </div>
 
   <div class="bottom-container">
-    <span>{{value.definition}}</span>
+    <div class="definition-container inner-bottom-container">
+        <span>{{value.definition}}</span>
+      </div>
   </div>
 
   <div ng-show='user && user.isAdmin' class="update-delete-container cf">

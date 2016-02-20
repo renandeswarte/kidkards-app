@@ -1,51 +1,97 @@
-.flashcard {
-  position: relative;
-  @include border-radius(5px, 1px, $lightGreyColor);
-  margin-bottom: 20px;
-  overflow: hidden;
-  @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.1));
-  .top-container {
-    border-bottom: 1px solid $darkGreyColor;
-    background-color: $darkGreyColor;
-    // Gradient Background
-    @include gradientBackground(#464e5b,#333333);
-    color: $whiteColor;
-    .inner-top-container {
-      height: 200px;
-      &.picture-container {
-        @include backgroundImg();
-      }
-      &.term-container {
-        padding: 10px;
-        @include flexCenter();
-        span {
-          text-align: center;
-          font-size: 20px;
+.flashcard-element {
+  @include transition(width, 0.3s, ease);
+  &.expanded {
+    width: 100%;
+    .flashcard {
+      .expand-options {
+        .fa-expand {
+          display: none;
+        }
+        .fa-compress {
+          display: block;
         }
       }
     }
   }
-  .bottom-container {
-    padding: 10px;
-    height: 200px;
+  .flashcard {
+    position: relative;
+    @include border-radius(5px, 1px, $lightGreyColor);
+    margin-bottom: 20px;
     overflow: hidden;
-    @include flexCenter();
-    span {
-      font-size: 20px;
+    @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.1));
+    .expand-options {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      z-index: 99;
+      background-color: rgba(0,0,0,0.2);
+      font-size: 12px;
+      line-height: 12px;
+      margin: 0px;
+      padding: 8px 8px 7px;
+      border-radius: 50%;
+      color: $whiteColor;
+      .fa-compress {
+        display: none;
+      }
+      @media (min-width:481px){
+        display: none;
+      }
     }
-  }
-  .update-delete-container {
-    position: absolute;
-    bottom: 5px;
-    left: 0px;
-    right: 0px;
-    .update {
-      float: left;
-      margin-left: 5px;
+    .top-container {
+      border-bottom: 1px solid $darkGreyColor;
+      background-color: $darkGreyColor;
+      // Gradient Background
+      @include gradientBackground(#464e5b,#333333);
+      color: $whiteColor;
+      padding-bottom: 100%;
+      position: relative;
+      .inner-top-container {
+        @include absolutePos(0px, 0px, 0px, 0px)
+        // height: 200px;
+        &.picture-container {
+          @include backgroundImg();
+        }
+        &.term-container {
+          padding: 10px;
+          @include flexCenter();
+          span {
+            text-align: center;
+            font-size: 20px;
+          }
+        }
+      }
     }
-    .delete {
-      float: right;
-      margin-right: 5px;
+    .bottom-container {
+      padding: 10px;
+      padding-bottom: 100%;
+      position: relative;
+      // height: 200px;
+      .inner-bottom-container {
+        @include absolutePos(0px, 0px, 0px, 0px)
+        overflow: hidden;
+
+        padding: 10px;
+        @include flexCenter();
+        span {
+          font-size: 20px;
+        }
+        
+      }
+    }
+    .update-delete-container {
+      position: absolute;
+      bottom: 5px;
+      left: 0px;
+      right: 0px;
+      .update {
+        float: left;
+        margin-left: 5px;
+      }
+      .delete {
+        float: right;
+        margin-right: 5px;
+      }
     }
   }
 }

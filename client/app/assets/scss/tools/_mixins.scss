@@ -1,4 +1,5 @@
 @mixin absolutePos($top, $right, $bottom, $left) {
+  position: absolute;
   top: $top;
   right: $right;
   bottom: $bottom;
@@ -49,6 +50,7 @@
   justify-content: center;
   -webkit-justify-content: center;
   -moz-justify-content: center;
+  text-align: center;
 }
 
 @mixin gradientBackground($color1, $color2) {

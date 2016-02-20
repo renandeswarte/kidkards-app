@@ -30,8 +30,10 @@
         left: 0;
 
         &.front {
-          background-color: $darkGreyColor;
-          @include gradientBackground(#464e5b,#333333);
+          background-color: $whiteColor;
+
+          // background-color: $darkGreyColor;
+          // @include gradientBackground(#464e5b,#333333);
           @include border-radius(3px, 1px, $lightGreyColor);
           @include browserAdaptation(transform, rotateX(0deg));
 

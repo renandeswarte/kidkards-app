@@ -22,4 +22,29 @@ angular.module('myApp.browseFlashcardsPage', ['ngRoute'])
     angular.element('#loader').remove();
   });
 
+  var menuHeight = 50 + 20;
+  var initialCardHeight;
+
+  $scope.expand = function($event) {
+    initialCardHeight = initialCardHeight || angular.element($event.currentTarget).height();
+
+    if(document.body.clientWidth < 480 ) {
+      angular.element($event.currentTarget).toggleClass('expanded');
+      var elementHeight = angular.element($event.currentTarget).height();
+      var position = angular.element($event.currentTarget).offset();
+
+      if (position.left > 0) {
+        angular.element($event.currentTarget).addClass('right-element-expanded');
+        $('html, body').animate({
+          scrollTop: position.top + elementHeight - menuHeight
+        }, 500);
+      } else if (angular.element($event.currentTarget).hasClass('right-element-expanded')) {
+        angular.element($event.currentTarget).removeClass('right-element-expanded');
+        $('html, body').animate({
+          scrollTop: position.top - initialCardHeight - menuHeight
+        }, 500);
+      }
+    }
+  }
+
 }]);

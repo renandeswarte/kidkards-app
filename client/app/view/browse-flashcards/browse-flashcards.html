@@ -5,7 +5,7 @@
  <img id="loader" src="assets/pictures/loader.gif">
 
  <section class="row flashcard-container">
-   <article ng-repeat="(key, value) in flashcards" class="fadein-effect col-xs-12 col-sm-4 col-md-3">
+   <article ng-click="expand($event)" ng-repeat="(key, value) in flashcards" class="flashcard-element fadein-effect col-xs-6 col-sm-4 col-md-3">
      <flashcard-element></flashcard-element>
    </article>
  </section>
