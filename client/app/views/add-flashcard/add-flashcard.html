@@ -1,4 +1,4 @@
-<div class="container page add-flashcard-page fadein-effect" ng-controller='addFlashcard' ng-init="getCategories()">
+<div class="container page add-flashcard-page fadein-effect" ng-init="getCategories()">
 
   <h1 class="page-title">Add a new flashcard</h1>
   
@@ -24,14 +24,12 @@
 
         <div class="form-group">
           <label>Project picture</label>
-          <input type="file" id="file_input" fileread="flashcardPicture" class="form-control input-file" required>
+          <input type="file" id="file_input" filereadupload="flashcardPicture" class="form-control input-file" required>
           <div role="alert">
             <span class="error" ng-show="profilePic.size > 5242880">
               please upload a pic smaller than 5mb!</span>
             </div>
         </div>
-
-
 
           <div class="form-group">
             <label>Definition</label>
@@ -73,12 +71,4 @@
       </div>
 
     </div>
-
-
-
-   
-
-
-
-
 </div>

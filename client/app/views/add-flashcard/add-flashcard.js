@@ -115,7 +115,7 @@ angular.module('myApp.addFlashcardPage', ['ngRoute'])
   $scope.submitPicture = function(){
     var fileName = fileNameGenerator();
     FlashCards.signRequest($scope.flashcardPicture, fileName);
-    $scope.flashcard.picture = 'https://flashcards-app-flashcards.s3.amazonaws.com/pictures/' + fileName;
+    $scope.flashcard.picture = 'https://flashcards-app.s3.amazonaws.com/pictures/' + fileName;
   };
   
   // Check picture size
@@ -130,15 +130,15 @@ angular.module('myApp.addFlashcardPage', ['ngRoute'])
 }])
 
 // Check if a image file is entererd
-.directive("fileread", [function () {
+.directive("filereadupload", [function () {
   return {
     scope: {
-      fileread: "="
+      filereadupload: "="
     },
     link: function (scope, element, attributes) {
       element.bind("change", function (changeEvent) {
         scope.$apply(function () {
-          scope.fileread = changeEvent.target.files[0];
+          scope.filereadupload = changeEvent.target.files[0];
         });
       });
     }
