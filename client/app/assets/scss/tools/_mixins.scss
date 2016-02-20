@@ -1,0 +1,84 @@
+@mixin absolutePos($top, $right, $bottom, $left) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin browserAdaptation($type, $input){
+  -webkit-#{$type}: $input;
+  -moz-#{$type}: $input;
+  -ms-#{$type}: $input;
+  #{$type}: $input;
+}
+
+// Animation effect when page load
+@mixin animationEffect($time, $effect) {
+  animation-duration: $time;
+  -webkit-animation-duration: $time;
+  -moz-animation-duration: $time;
+  animation-name: $effect;
+  -webkit-animation-name: $effect;
+  -moz-animation-name: $effect;
+}
+
+@mixin backgroundImg() {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+@mixin border-radius($radius, $size, $color) {
+  border: $size solid;
+  border-color: $color;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+
+  align-items: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+
+  justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+}
+
+@mixin gradientBackground($color1, $color2) {
+    background: -moz-linear-gradient(top, $color1 0%, $color2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $color1 0%, $color2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $color1 0%, $color2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2,GradientType=0 );
+}
+
+@mixin transition($type, $time, $effect) {
+  -webkit-transition: $type $time $effect;
+  -moz-transition: $type $time $effect;
+  -ms-transition: $type $time $effect;
+  transition: $type $time $effect;
+}
+
+@mixin box-shadow($horizontal, $vertical, $blur, $spread, $color) {
+  -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+  -moz-box-shadow: $horizontal $vertical $blur $spread $color;
+  box-shadow: $horizontal $vertical $blur $spread $color;
+}
+
+@mixin animate($name, $duration, $fill) {
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+  -moz-animation-name: $name;
+  -webkit-animation-name: $name;
+  animation-name: $name;
+  -webkit-animation-fill-mode: $fill;
+  -moz-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}

@@ -1,0 +1,32 @@
+.add-flashcard-page {
+  .forms-container {
+    .navigation-button-container {
+      text-align: center;
+      margin-bottom: 20px;
+      button {
+        color: $whiteColor;
+        border: none;
+      }
+    }
+
+    form {
+      .add-new-category {
+        margin-top: 10px;
+        display: inline-block;
+        width: auto;
+      }
+      .add-new-category-btn {
+        background-color: $mainColor;
+        color: $whiteColor;
+      }
+      #file_input {
+        height: auto;
+      }
+
+      button.submit {
+        display: block;
+        margin:0 auto 30px;
+      }
+    }
+  }
+}

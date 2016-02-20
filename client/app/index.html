@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Flashcards</title>
+  <link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
+  <meta name="description" content="Flashcards application">
+
+  <!-- Responsive meta for mobile navigation -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Mobile app capable -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- <meta content="yes" name="apple-touch-fullscreen" /> -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/pictures/logo/icon-medium.png"/>
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/pictures/logo/icon-large.png"/>
+  <link rel="shortcut icon" sizes="114x114" href="assets/pictures/logo/icon-large.png"/>
+
+  <!-- App style files -->
+  <link rel="stylesheet" href="dist/css/app.css">
+
+</head>
+<body class="body-container">
+
+  <!-- Header section injection -->
+  <header-directive class="header container-full"></header-directive>
+
+  <!-- Main container and views -->
+  <div class="main-container container-full" ng-view autoscroll="true"></div>
+
+  <!-- Footer section injection -->
+  <footer-directive class="footer container-full"></footer-directive>
+
+    <!-- Footer section injection -->
+  <modal-directive class="modal-container"></modal-directive>
+
+  <!-- Javascript assets -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/voice-synth.js"></script>
+
+  
+  <!-- App Dependecies Scripts -->
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+
+  <!-- App Scripts -->
+  <script src="dist/js/app.concat.js"></script>
+  
+</body>
+</html>

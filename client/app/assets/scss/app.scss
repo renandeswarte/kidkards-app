@@ -1,0 +1,109 @@
+@import "externals/reset";
+@import "externals/bootstrap";
+@import "externals/font-awesome";
+@import "externals/animate";
+
+@import "tools/variables";
+@import "tools/mixins";
+@import "tools/keyframes-animations";
+
+@import "views/header";
+@import "views/footer";
+@import "views/homepage";
+
+@import "views/flashcard";
+@import "views/categories";
+@import "views/add-flashcard";
+@import "views/modal";
+@import "views/quizz-categories";
+@import "views/quizz-category";
+@import "views/flipping-card";
+@import "views/matching";
+
+
+
+html {
+  background-color: $bgColor;
+  -webkit-font-smoothing: antialiased;
+  * {
+    font-family:"Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  button, .btn:focus, .btn, .btn.active, a {
+    outline: 0 !important;
+  }
+}
+
+body {
+  background: none;
+}
+
+// Override Global Buttons style
+.btn.active,
+.btn-primary {
+  background-color: $secondaryColor !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: $whiteColor;
+}
+.btn.inactive {
+  background-color: $lightGreyColor !important;
+}
+.btn-secondary,
+.btn.update {
+  color: $whiteColor;
+  background-color: $greenColor;
+}
+.btn.delete {
+  color: $whiteColor;
+  background-color: $redColor;
+}
+.btn.warning {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+// Style for all pages
+.page {
+  padding-top: 52px;
+  @media (min-width:768px){
+    padding-top: 102px;
+  }
+  .page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  #loader {
+    position: relative;
+    left: 50%;
+    width: 50px;
+    margin-top: 100px;
+    margin-left: -25px;
+  }
+}
+
+// Fade effect when page load
+.fadein-effect {
+ @include animationEffect(1s, fadeEffect);
+}
+
+// Text truncate
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Clearfix
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {clear: both;}
+.cf {*zoom: 1;}
+
+

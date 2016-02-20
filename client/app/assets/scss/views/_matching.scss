@@ -1,0 +1,106 @@
+.matching-game-page {
+  .setting-container {
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto 0px;
+    @include border-radius(5px, 1px, $lightGreyColor);
+    @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.2));
+    .description {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .selection-container {
+      .choice {
+        height: 150px;
+        @include flexCenter();
+        @include border-radius(5px, 1px, $whiteColor);
+        color: $whiteColor;
+        &.small {
+          background-color: $mainColor;
+        }
+        &.large {
+          background-color: $greenColor;
+        }
+        .number {
+          font-size: 40px;
+          font-weight: bold;
+        }
+        .details {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  .replay-container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    margin: 140px auto 0px;
+    @include border-radius(5px, 1px, $lightGreyColor);
+    @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.2));
+    .congrats {
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .description {
+      font-size: 16px;
+      margin-bottom: 20px;
+      #time-spent {
+        font-weight:bold;
+      }
+    }
+    a {
+      &.redirect {
+        &:hover {
+          color: $whiteColor;
+        }
+      }
+    }
+  }
+  .flashcards-container {
+    .card {
+      margin-bottom: 20px;
+      .flip-container {
+        opacity: 1;
+        @include transition(opacity, 0.3s, ease);
+        padding-bottom: 100%;
+        position: relative;
+        .flipper{
+          .side {
+            height: 100%;
+            width: 100%;
+            &.front {
+              @include gradientBackground(#00b4fb,$blueColor);
+              .front-inner-container {
+                height: 100%;
+                width: 100%;
+                background-image: url('../../assets/pictures/logo/flashcards-app-logo-white-plain-medium.png');
+                background-size: 100px;
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+              }
+            }
+            &.back {
+              padding: 0px;
+              .picture-container,.term-container, .bottom-container {
+                height: 100%;
+                width: 100%;
+              }
+              .picture-container {
+                @include backgroundImg();
+              }
+              .term-container, .bottom-container {
+                @include flexCenter();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

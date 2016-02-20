@@ -1,0 +1,25 @@
+.categories-page {
+.categories-container {
+  li {
+    padding: 10px;
+    a {
+      display: block;
+      font-weight: bold;
+      padding: 20px;
+      opacity: 0.8;
+      text-align: center;
+      color: $whiteColor;
+      background-color: $mainColor;
+      @include border-radius(3px, 1px, $whiteColor);
+      @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.2));
+      @include transition(all, 0.5s, ease)
+
+      &:hover {
+        @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.4));
+        text-decoration: none;
+        opacity: 1;
+      }
+    }
+  }
+}
+}

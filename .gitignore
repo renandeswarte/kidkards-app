@@ -1,0 +1,13 @@
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+client/app/dist/
+.env
+npm-debug.log
+
+tmp
+.DS_Store
+.idea
+
+app/assets/.sass-cache/

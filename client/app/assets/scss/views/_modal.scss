@@ -1,0 +1,27 @@
+#login-modal {
+  .forms-container {
+    .navigation-button-container {
+      text-align: center;
+      margin-bottom: 20px;
+      button {
+        color: $whiteColor;
+        border: none;
+      }
+    }
+    form {
+      button.submit {
+        display: block;
+        margin:0 auto;
+      }
+    }
+    .error {
+      color: $redColor;
+    }
+  }
+}
+
+#delete-modal {
+  .modal-body {
+    text-align: center;
+  }
+}

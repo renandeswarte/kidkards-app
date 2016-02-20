@@ -1,0 +1,51 @@
+.flashcard {
+  position: relative;
+  @include border-radius(5px, 1px, $lightGreyColor);
+  margin-bottom: 20px;
+  overflow: hidden;
+  @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.1));
+  .top-container {
+    border-bottom: 1px solid $darkGreyColor;
+    background-color: $darkGreyColor;
+    // Gradient Background
+    @include gradientBackground(#464e5b,#333333);
+    color: $whiteColor;
+    .inner-top-container {
+      height: 200px;
+      &.picture-container {
+        @include backgroundImg();
+      }
+      &.term-container {
+        padding: 10px;
+        @include flexCenter();
+        span {
+          text-align: center;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .bottom-container {
+    padding: 10px;
+    height: 200px;
+    overflow: hidden;
+    @include flexCenter();
+    span {
+      font-size: 20px;
+    }
+  }
+  .update-delete-container {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    right: 0px;
+    .update {
+      float: left;
+      margin-left: 5px;
+    }
+    .delete {
+      float: right;
+      margin-right: 5px;
+    }
+  }
+}

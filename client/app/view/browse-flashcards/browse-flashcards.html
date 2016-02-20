@@ -1,0 +1,13 @@
+<div class="container page category-page fadein-effect">
+
+ <h1 class="page-title">Category : {{category}}</h1>
+
+ <img id="loader" src="assets/pictures/loader.gif">
+
+ <section class="row flashcard-container">
+   <article ng-repeat="(key, value) in flashcards" class="fadein-effect col-xs-12 col-sm-4 col-md-3">
+     <flashcard-element></flashcard-element>
+   </article>
+ </section>
+
+</div>
