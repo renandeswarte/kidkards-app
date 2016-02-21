@@ -7,7 +7,7 @@ angular.module('myApp.categoriesServices', [])
   var getCategoriesList = function() {
    return $http({
      method: 'GET',
-     url: '/categories/getList'
+     url: apiURL + '/categories/getList'
    }).then(function(res) {
     for (var elm in res.data) {
       categories[res.data[elm].id] = res.data[elm].name;

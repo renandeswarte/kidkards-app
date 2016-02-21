@@ -173,9 +173,24 @@ angular.module('myApp.matchingFlashcardsPage', ['ngRoute'])
   };
 
   function convertTime(duration) {
-    var seconds = parseInt((duration/1000)%60);
-    seconds = (seconds < 10) ? "0" + seconds : seconds;
-    return seconds;
+    var time = parseInt(duration/1000);
+    var minutes, seconds;
+
+    if (time < 10) {
+      timeSpent = "0" + time + " seconds";
+    } else if (time >= 10 && time < 60) {
+      timeSpent = time + " seconds";
+    } else {
+      minutes = parseInt(time / 60);
+      minutes = (minutes === 1) ? minutes + "minute" : minutes + "minutes";
+      if (time % 60 === 0) {
+        seconds = "";
+      } else {
+        seconds = " and " + time % 60 + " seconds";
+      }
+      timeSpent = minutes + seconds;
+    }
+    return timeSpent;
   }
 
 }]);

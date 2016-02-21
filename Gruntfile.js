@@ -11,6 +11,7 @@ module.exports = function(grunt) {
       dist: {
         src: [
         'client/app/**/*.js',
+        'client/app/config.js',
         '!client/app/assets/js/*js',
         '!client/app/bower_components/**/*js',
         '!client/app/dist/**/*js'
