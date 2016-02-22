@@ -1,0 +1,125 @@
+<!-- Login Modal -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModal" ng-controller='AuthController'>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginModal">Login or Create an account</h4>
+      </div>
+      <div class="modal-body cf">
+
+        <!-- Switch Form navigation -->
+        <div class="forms-container row"  >
+         <section class="navigation-button-container"  >
+          <button class="btn" ng-class="LoS ? 'inactive' : 'active'" ng-click="LoS=false; error = false">Login</button>
+          <button class="btn" ng-class="LoS ? 'active' : 'inactive'" ng-click="LoS=true; error = false">Sign up</button>
+        </section>
+
+          <!-- Login form -->
+          <section class="form-container col-xs-12 col-sm-offset-3 col-sm-6 login-container"  ng-hide="LoS">
+            <form class="login-form"  ng-submit="login()">
+              <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" id="login-email" placeholder="Email" ng-model="email" required>
+
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" id="login-password" placeholder="Password" ng-model="password" required>
+              </div>
+              <p class="error" ng-if="error">Error: <strong>{{ error.message }}</strong></p>
+              <div class="submit-container">
+                <button type="submit" class="btn btn-primary submit">Submit</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Signup form -->
+          <section class="form-container col-xs-12 col-sm-offset-3 col-sm-6 signup-container"  ng-show="LoS">
+            <form class="signup-form" ng-submit="createUser()">
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" id="signup-firstname" placeholder="Username" ng-model="username" required>
+              </div>
+              <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" id="signup-email" placeholder="Email" ng-model="email" required>
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" id="signup-password" placeholder="Password" ng-model="password" required>
+              </div>
+              <p class="error" ng-if="error">Error: <strong>{{ error.message }}</strong></p>
+              <div class="submit-container">
+                <button type="submit" class="btn btn-primary submit">Submit</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Update Modal -->
+<div class="modal fade" id="update-modal" tabindex="-1" role="dialog" aria-labelledby="updateModal" ng-controller="updateDeleteController">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="updateModal">Update the Flashcard</h4>
+      </div>
+      <form class="update-form" ng-submit="updateForm()">
+      <div class="modal-body cf">
+          <!-- Update form -->
+          <section class="form-container col-xs-12 col-sm-offset-3 col-sm-6 signup-container">
+            
+              <input type="hidden" class="card-id" name="cardId" value="">
+              <div class="form-group">
+                <label>Definition</label>
+                <textarea id="fc-definition-update" class="form-control" rows="3" maxlength="200" required></textarea>
+              </div>
+              <div class="submit-container">
+                <!-- <button type="submit" class="btn btn-primary submit">Submit</button> -->
+              </div>
+            
+          </section>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary submit">Submit</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" ng-controller="updateDeleteController">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="deleteModal">Delete the Flashcard</h4>
+      </div>
+      <div class="modal-body cf">
+          <!-- Update form -->
+          <section class="form-container col-xs-12 col-sm-offset-3 col-sm-6 signup-container">
+            <form class="update-form" ng-submit="deleteForm()">
+              <input type="hidden" class="card-id-delete" name="cardIdDelete" value="">
+              <h4>Are you sure?</h4>
+              <div class="submit-container">
+                <button type="submit" class="btn btn-warning submit">Delete</button>
+              </div>
+            </form>
+          </section>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

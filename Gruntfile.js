@@ -94,6 +94,20 @@ module.exports = function(grunt) {
       server:{
         command: 'nodemon server/server.js'
       }
+    },
+
+    copy: {
+      main: {
+        files: [
+          // copy CSS file
+          {expand: true, flatten: true, src: ['client/app/dist/js/app.min.js'], dest: 'mobileApp/www/js/'},
+          // copy CSS file
+          {expand: true, flatten: true, src: ['client/app/dist/css/app.css'], dest: 'mobileApp/www/css/'},
+          // copy HTML files
+          {expand: true, flatten: true, src: ['client/app/views/**/*html'], dest: 'mobileApp/www/views/'}
+
+        ],
+      },
     }
 
   });
@@ -105,6 +119,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   ////////////////////////////////////////////////////
   // Main grunt tasks

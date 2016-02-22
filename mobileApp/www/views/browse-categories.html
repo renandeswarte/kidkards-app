@@ -1,0 +1,13 @@
+<div class="container page categories-page fadein-effect" ng-controller='showCategories' ng-init="getCategories()">
+
+  <h1 class="page-title">Browse categories</h1>
+  <img id="loader" src="assets/pictures/loader.gif">
+
+
+  <ul class="row categories-container">
+    <li ng-repeat="category in categories" class="fadein-effect col-xs-12 col-sm-4">
+      <a href="#/categories/{{category.name}}" ng-style="{'background-color':'{{category.color}}'}">{{category.name}}</a>
+    </li>
+  </ul>
+  
+</div>

@@ -1,0 +1,11 @@
+<div class="container page quizz-categories-page fadein-effect" ng-init="getCategories()">
+  <h1 class="page-title">Quizz</h1>
+  <h2 class="page-title">Please choose a category</h2>
+  <img id="loader" src="assets/pictures/loader.gif">
+
+  <ul class="row categories-container">
+    <li ng-repeat="category in categories" class="fadein-effect col-xs-12 col-sm-4">
+      <a href="#/quizz-categories/{{category.name}}" ng-style="{'background-color':'{{category.color}}'}">{{category.name}}</a>
+    </li>
+  </ul>
+</div>

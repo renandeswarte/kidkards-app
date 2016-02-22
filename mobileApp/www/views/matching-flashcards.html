@@ -1,0 +1,70 @@
+<div class="container page matching-game-page fadein-effect">
+
+  <h1 class="page-title">Matching | {{category}}</h1>
+  <img id="loader" class="hidden" src="assets/pictures/loader.gif">
+
+  <section class="setting-container">
+    <p class="description">Select the number of cards</p>
+    <div class="selection-container row">
+    <div class="choice small col-xs-4 col-xs-offset-1" ng-click="getFlashCard(4)">
+        <div class="choice-container">
+          <p class="number">4</p>
+        </div>
+      </div>
+      <div class="choice small col-xs-4 col-xs-offset-2" ng-click="getFlashCard(8)">
+        <div class="choice-container">
+          <p class="number">8</p>
+        </div>
+      </div>
+      <div class="choice large col-xs-4 col-xs-offset-1" ng-click="getFlashCard(12)">
+        <div class="choice-container">
+          <p class="number">12</p>
+        </div>
+      </div>
+      <div class="choice large col-xs-4 col-xs-offset-2" ng-click="getFlashCard(16)">
+        <div class="choice-container">
+          <p class="number">16</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="replay-container hidden">
+    <p class="congrats">Congratulations</p>
+    <p class="description">You won in <span id="time-spent"></span> !</p>
+    <a class="reload btn btn-primary" ng-click="reload()"><span>Replay</span></a>
+    <a href="#/matching-categories" class="redirect btn btn-secondary"><span>Change</span></a>
+  </section>
+
+  <section class="row flashcards-container hidden">
+    <article ng-repeat="flashcard in flashcards" class="card fadein-effect col-xs-6 col-sm-3">
+
+      <div class="flip-container col-xs-12" data-cardid="{{flashcard.id}}" data-cardmain="{{flashcard.isMain}}" ng-click="selected(this.flashcard)">
+
+        <div class="flipper">
+
+          <!-- Front side of the card -->
+          <div class="side front">
+            <div class="front-inner-container"></div>
+          </div>
+
+          <!-- Back side of the card -->
+          <div class="side back">
+            <div class="picture-container inner-top-container" ng-show="flashcard.isImg && flashcard.isMain" ng-style="{'background-image':'url({{ flashcard.picture }})'}">
+            </div>
+
+            <div class="term-container inner-top-container" ng-show="!flashcard.isImg && flashcard.isMain">
+              <span>{{flashcard.term}}</span>
+            </div>
+
+            <div class="bottom-container" ng-show="!flashcard.isMain">
+              <span>{{flashcard.definition}}</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </article>
+  </section>
+</div>

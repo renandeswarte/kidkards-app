@@ -1,0 +1,74 @@
+<div class="container page add-flashcard-page fadein-effect" ng-init="getCategories()">
+
+  <h1 class="page-title">Add a new flashcard</h1>
+  
+  <div class="forms-container">
+
+    <div class="navigation-button-container">
+      <button class="btn" ng-class="ImgOrText ? 'inactive' : 'active'" ng-click="ImgOrText=false; error = false">Image</button>
+      <button class="btn" ng-class="ImgOrText ? 'active' : 'inactive'" ng-click="ImgOrText=true; error = false">Text</button>
+    </div>
+
+    <div class="form-container col-xs-12 col-sm-offset-3 col-sm-6 flashcard-img-container" ng-hide="ImgOrText">
+      <form class="flashcard-img-form" ng-submit="submitFc()">
+
+        <label>Category</label>
+        <select class="form-control" id="category-list-img">
+          <option ng-repeat="categorie in categories" value="{{ categorie }}">{{ categorie }}</option>
+        </select>
+
+        <div class="form-group">
+          <input type="text" id="add-new-category-img" class="add-new-category form-control" placeholder="Add new category">
+          <span id="new-category-img-submit" class="add-new-category-btn btn" ng-click="addNewCategory('img')">Add</span>
+        </div>
+
+        <div class="form-group">
+          <label>Project picture</label>
+          <input type="file" id="file_input" filereadupload="flashcardPicture" class="form-control input-file" required>
+          <div role="alert">
+            <span class="error" ng-show="profilePic.size > 5242880">
+              please upload a pic smaller than 5mb!</span>
+            </div>
+        </div>
+
+          <div class="form-group">
+            <label>Definition</label>
+            <textarea id="fc-definition-img" class="form-control" rows="3" placeholder="Definition" ng-model="definition" maxlength="200" required></textarea>
+          </div>
+
+          <p class="error" ng-if="error">Error: <strong>{{ error.message }}</strong></p>
+          <button type="submit" class="btn btn-primary submit">Submit</button>
+        </form>
+
+      </div>
+
+      <div class="form-container col-xs-12 col-sm-offset-3 col-sm-6 flashcard-text-container" ng-show="ImgOrText">
+        <form class="flashcard-text-form"  ng-submit="submitFc()">
+
+          <label>Category</label>
+          <select class="form-control" id="category-list-text">
+            <option ng-repeat="categorie in categories" value="{{ categorie }}">{{ categorie }}</option>
+          </select>
+
+          <div class="form-group">
+          <input type="text" id="add-new-category-text" class="add-new-category form-control" placeholder="Add new category">
+          <span id="new-category-img-submit" class="add-new-category-btn btn" ng-click="addNewCategory('text')">Add</span>
+          </div>
+
+          <div class="form-group">
+            <label>Term</label>
+            <input type="text" class="form-control" id="fc-term-text" placeholder="Term" ng-model="termText" required>
+          </div>
+
+          <div class="form-group">
+            <label>Definition</label>
+            <textarea id="fc-definition-text" class="form-control" rows="3" placeholder="Definition" ng-model="definition" maxlength="200" required></textarea>
+          </div>
+          <p class="error" ng-if="error">Error: <strong>{{ error.message }}</strong></p>
+          <button type="submit" class="btn btn-primary submit">Submit</button>
+        </form>
+
+      </div>
+
+    </div>
+</div>
