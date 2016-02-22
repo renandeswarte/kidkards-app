@@ -36,6 +36,8 @@ angular.module('myApp.auth', [])
     Auth.loginUser(userLoginInfo)
     .then(function(res) {
       //Redirect User after login
+      console.log(res.data)
+      $cookies.put('flashcards-app-FC', JSON.stringify(res.data));
       $window.location.href='/';
     })
     .catch(function(err) {
@@ -48,7 +50,8 @@ angular.module('myApp.auth', [])
 
   $scope.logout = function() {
     // Logout the client, destroy the cookie and redirection to the default page
-    Auth.logout();
+    // Auth.logout();
+    $cookies.remove('flashcards-app-FC');
     $window.location.href='/';
   };
 

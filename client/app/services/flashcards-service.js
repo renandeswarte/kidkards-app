@@ -5,7 +5,7 @@ angular.module('myApp.flashcardsServices', [])
   var getLastestFlashcards = function() {
     return $http({
       method: 'GET',
-      url: '/flashcard/getLastest'
+      url: apiURL + '/flashcard/getLastest'
     }).success(function successCallback(response) {
       return response.data;
     }).error(function(response) {
@@ -16,7 +16,7 @@ angular.module('myApp.flashcardsServices', [])
   var getFlashcardsByCategory = function(category) {
     return $http({
       method: 'GET',
-      url: '/flashcard/' + category
+      url: apiURL + '/flashcard/' + category
     }).success(function successCallback(response) {
       return response.data;
     }).error(function(response) {
@@ -27,7 +27,7 @@ angular.module('myApp.flashcardsServices', [])
   var updateFlashcard = function(cardInfo) {
     return $http({
       method: 'PUT',
-      url: '/flashcard/update-flashcard',
+      url: apiURL + '/flashcard/update-flashcard',
       data: {
         id: cardInfo.id,
         definition: cardInfo.definition
@@ -43,7 +43,7 @@ angular.module('myApp.flashcardsServices', [])
   var deleteFlashcard = function(cardInfo) {
     return $http({
       method: 'DELETE',
-      url: '/flashcard/delete-flashcard/'+ cardInfo.id
+      url: apiURL + '/flashcard/delete-flashcard/'+ cardInfo.id
     }).success(function successCallback(response) {
       //console.log('delete success');
       return response;
@@ -72,7 +72,7 @@ angular.module('myApp.flashcardsServices', [])
 
       var xhr = new XMLHttpRequest();
       
-      xhr.open("GET", "/api/sign_s3?file_name="+fn+"&file_type="+file.type);
+      xhr.open("GET", apiURL + "/api/sign_s3?file_name="+fn+"&file_type="+file.type);
       xhr.onreadystatechange = function(){
           if(xhr.readyState === 4){
               if(xhr.status === 200){

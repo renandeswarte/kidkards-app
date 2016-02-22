@@ -6,12 +6,12 @@ angular.module('myApp.authServices', [])
   var loginUser = function(dataUser) {
     return $http({
       method: 'POST',
-      url: '/auth/user-login',
+      url: apiURL + '/auth/user-login',
       data: {
         user: dataUser
       }
     }).success(function successCallback(response) {
-      //console.log("success", response);
+      // console.log("success Login", response);
       return response;
     }).error(function(response) {
       console.log('error creation')
@@ -23,12 +23,11 @@ angular.module('myApp.authServices', [])
   var createUser = function(dataUser) {
     return $http({
       method: 'POST',
-      url: '/auth/user-create',
+      url: apiURL + '/auth/user-create',
       data: {
         user: dataUser
       }
     }).success(function successCallback(response) {
-      //console.log("success", response);
       return response;
     }).error(function(response) {
       console.log('error creation')
@@ -39,7 +38,7 @@ angular.module('myApp.authServices', [])
   var logout = function() {
    return $http({
      method: 'GET',
-     url: '/auth/logout'
+     url: apiURL + '/auth/logout'
    }).then(function(res) {
      return res.data;
    });

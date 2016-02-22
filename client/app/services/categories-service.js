@@ -19,7 +19,7 @@ angular.module('myApp.categoriesServices', [])
   var createCategory = function(categoryData) {
     return $http({
       method: 'POST',
-      url: '/categories/create',
+      url: apiURL + '/categories/create',
       data: categoryData
     }).success(function successCallback(response) {
       //console.log("success", response);

@@ -89,7 +89,7 @@ angular.module('myApp.addFlashcardPage', ['ngRoute'])
     // Saving flashcard to the DB
     return $http({
       method: 'POST',
-      url: '/flashcard/create',
+      url: apiURL + '/flashcard/create',
       data: {
         flashCard: flashCardData
       }
