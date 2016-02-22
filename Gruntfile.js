@@ -93,6 +93,9 @@ module.exports = function(grunt) {
       },
       server:{
         command: 'nodemon server/server.js'
+      },
+      cordova:{
+        command: 'cd mobileApp &&' + 'cordova run ios'
       }
     },
 
@@ -104,7 +107,12 @@ module.exports = function(grunt) {
           // copy CSS file
           {expand: true, flatten: true, src: ['client/app/dist/css/app.css'], dest: 'mobileApp/www/css/'},
           // copy HTML files
-          {expand: true, flatten: false, src: ['client/app/views/**/*html'], dest: 'mobileApp/www/views/'}
+          {
+            expand: true,
+            cwd: 'client/app/views/',
+            src: ['**/*html'],
+            dest: 'mobileApp/www/views/'
+          }
 
         ],
       },
@@ -130,8 +138,14 @@ module.exports = function(grunt) {
     'jshint',
     'concat',
     'uglify',
-    'sass'
+    'sass',
+    'copy'
   ]);
+
+  // Build and run iOS app
+  grunt.registerTask('ios', function () {
+    grunt.task.run([ 'shell:cordova' ]);
+  });
 
   // Open the HTML app file
   grunt.registerTask('view', function () {
