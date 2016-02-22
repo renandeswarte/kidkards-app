@@ -99,12 +99,12 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          // copy CSS file
+          // copy JS file
           {expand: true, flatten: true, src: ['client/app/dist/js/app.min.js'], dest: 'mobileApp/www/js/'},
           // copy CSS file
           {expand: true, flatten: true, src: ['client/app/dist/css/app.css'], dest: 'mobileApp/www/css/'},
           // copy HTML files
-          {expand: true, flatten: true, src: ['client/app/views/**/*html'], dest: 'mobileApp/www/views/'}
+          {expand: true, flatten: false, src: ['client/app/views/**/*html'], dest: 'mobileApp/www/views/'}
 
         ],
       },
