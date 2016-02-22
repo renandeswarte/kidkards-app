@@ -17,7 +17,6 @@ angular.module('myApp', [
   'myApp.addFlashcardPage',
   'myApp.browseCategoriesPage',
   'myApp.browseFlashcardsPage',
-  // 'myApp.flashcardDirective',
   'myApp.quizzCategoriesPage',
   'myApp.quizzFlashcardsPage',
   'myApp.updateDeleteCard',

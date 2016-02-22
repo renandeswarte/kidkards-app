@@ -24,7 +24,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          sourceMap: true,
+          sourceMap: false,
           outputStyle: 'compressed'
         },
         files: {                         
@@ -83,6 +83,10 @@ module.exports = function(grunt) {
       css: {
         files: 'client/app/assets/scss/**/*.scss',
         tasks: ['sass']
+      },
+      picture: {
+        files: 'client/app/assets/pictures/**/*',
+        tasks: ['copy']
       }
     },
 
@@ -95,7 +99,7 @@ module.exports = function(grunt) {
         command: 'nodemon server/server.js'
       },
       cordova:{
-        command: 'cd mobileApp &&' + 'cordova run ios'
+        command: 'cd mobileApp && cordova run ios'
       }
     },
 
@@ -112,6 +116,20 @@ module.exports = function(grunt) {
             cwd: 'client/app/views/',
             src: ['**/*html'],
             dest: 'mobileApp/www/views/'
+          },
+          // copy picture files to mobile appp folder
+          {
+            expand: true,
+            cwd: 'client/app/assets/pictures',
+            src: ['**/*'],
+            dest: 'mobileApp/www  /img/'
+          },
+          // copy picture files to mobile appp folder
+          {
+            expand: true,
+            cwd: 'client/app/assets/pictures',
+            src: ['**/*'],
+            dest: 'client/app/dist/img/'
           }
 
         ],
