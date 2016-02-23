@@ -5,6 +5,7 @@ angular.module('myApp', [
   'myApp.login',
   'myApp.homepage',
   'myApp.auth',
+  'myApp.displayServices',
   'myApp.authServices',
   'myApp.categoriesServices',
   'myApp.cookieServices',

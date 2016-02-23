@@ -8,10 +8,10 @@ angular.module('myApp.browseFlashcardsPage', ['ngRoute'])
   });
 }])
 
-.controller('browseFlashcards', ['$scope', '$route', 'FlashCards', function($scope, $route, FlashCards) {
+.controller('browseFlashcards', ['$scope', '$route', 'FlashCards', 'Display', function($scope, $route, FlashCards, Display) {
 
-  // Set default min height regarding screen height
-  angular.element('.page').css('min-height', window.innerHeight - 40 + 'px');
+  // Center loader to the middle of the page
+  Display.centerElement('#loader', true);
 
   $scope.category = $route.current.params.category;
 
@@ -20,9 +20,13 @@ angular.module('myApp.browseFlashcardsPage', ['ngRoute'])
     $scope.flashcards = flashcards.data;
     // Remove loader
     angular.element('#loader').remove();
+    // Center content to the middle of the page
+    window.setTimeout(function() {  
+      Display.centerElement('.page');
+    }, 50); 
   });
 
-  var menuHeight = 50 + 20;
+  var menuHeight = 70 + 20;
   var initialCardHeight;
 
   $scope.expand = function($event) {

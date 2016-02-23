@@ -9,14 +9,11 @@ angular.module('myApp.matchingCategoriesPage', ['ngRoute'])
 }])
 
 .controller('showMatchingCategories',
-  ['$scope', '$http', 'FlashCards', 'Categories',
-  function($scope, $http, FlashCards, Categories) {
+  ['$scope', '$http', 'FlashCards', 'Categories', 'Display', 
+  function($scope, $http, FlashCards, Categories, Display) {
 
-  // Set default min height regarding screen height
-  angular.element('.page').css('min-height', window.innerHeight - 40 + 'px');
-  window.onresize = function(event) {
-    angular.element('.page').css('min-height', window.innerHeight - 40 + 'px');
-  };
+  // Center loader to the middle of the page
+  Display.centerElement('#loader', true);
 
   // Get categories names
   $scope.getCategories = function() {
@@ -34,6 +31,11 @@ angular.module('myApp.matchingCategoriesPage', ['ngRoute'])
       $scope.categories = categoriesSorted;
       // Remove loader
       angular.element('#loader').remove();
+
+      // Center content to the middle of the page
+      window.setTimeout(function() {
+        Display.centerElement('.page');
+      }, 50); 
     });
   };
 

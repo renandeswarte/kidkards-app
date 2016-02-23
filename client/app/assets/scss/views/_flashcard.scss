@@ -15,10 +15,10 @@
   }
   .flashcard {
     position: relative;
-    @include border-radius(5px, 1px, $lightGreyColor);
+    @include border-radius(10px, 1px, $lightGreyColor);
     margin-bottom: 20px;
     overflow: hidden;
-    @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.1));
+    @include box-shadow(0px, 0px, 2px, 1px, rgba(0,0,0,0.1));
     .expand-options {
       position: absolute;
       top: 5px;
@@ -70,11 +70,11 @@
       .inner-bottom-container {
         @include absolutePos(0px, 0px, 0px, 0px)
         overflow: hidden;
-
         padding: 10px;
         @include flexCenter();
         span {
           font-size: 20px;
+          text-transform: capitalize;
         }
         
       }

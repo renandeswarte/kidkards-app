@@ -15,33 +15,30 @@
     }
   }
 
-  .top-bar {
-    margin: 20px 0px;
-    text-align: center;
-    position: relative;
-    .backToCategories {
-      display: block;
-      max-width: 200px;
-      margin: 0 auto 20px
-    }
-    .page-title{
-      margin:0;
-      display: inline-block;
-      margin-top: 5px;
-    }
-    @media (min-width:768px) {
-      .backToCategories {
-        position: absolute;
-        left: 0px;
-      }
-    }
-  }
   .buttons-interaction {
+    display: none;
     margin-bottom: 20px;
     text-align: center;
     .btn {
       &.greyed {
         background-color: $lightGreyColor !important;
+      }
+    }
+    .backToCategories {
+      border-radius: 50%;
+        font-size: 20px;
+        width: 42px;
+        padding-top: 8px;
+        margin-right: 20px;
+    }
+    .sound-control {
+      margin-left: 20px;
+      display: inline-block;
+      .volume {
+        border-radius: 50%;
+        font-size: 20px;
+        width: 42px;
+        padding-top: 8px;
       }
     }
   }
@@ -60,15 +57,5 @@
     p {
       text-align: center;
     }
-  }
-
-  .sound-control {
-    display: none;
-    margin-bottom: 30px;
-    text-align: center;
-    i {
-      margin-right: 5px;
-    }
-
   }
 } 

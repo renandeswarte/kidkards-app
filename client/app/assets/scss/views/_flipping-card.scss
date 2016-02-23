@@ -71,6 +71,9 @@
           @include border-radius(3px, 1px, $lightGreyColor);
           overflow: hidden;
           @include browserAdaptation(transform, rotateX(-180deg));
+          .card-definition {
+            text-transform: capitalize;
+          }
         }
       }
 

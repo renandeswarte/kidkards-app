@@ -8,10 +8,10 @@ angular.module('myApp.quizzFlashcardsPage', ['ngRoute'])
   });
 }])
 
-.controller('quizzCategory', ['$scope', '$route', 'FlashCards', function($scope, $route, FlashCards) {
+.controller('quizzCategory', ['$scope', '$route', 'FlashCards', 'Display', function($scope, $route, FlashCards, Display) {
 
-  // Set default min height regarding screen height
-  angular.element('.page').css('min-height', window.innerHeight - 40 + 'px');
+  // Center loader to the middle of the page
+  Display.centerElement('#loader', true);
 
   // Get the Category Name
   $scope.category = $route.current.params.category;
@@ -22,7 +22,7 @@ angular.module('myApp.quizzFlashcardsPage', ['ngRoute'])
   $scope.flashcard;
   $scope.cardNumber;
   $scope.cardsTotal;
-  $scope.sound = false;
+  $scope.sound = true;
 
   $scope.initMatching = function() {
     // Get all flashcard from the category
@@ -58,9 +58,14 @@ angular.module('myApp.quizzFlashcardsPage', ['ngRoute'])
       // Remove loader
       angular.element('#loader').remove();
       // Display page elements
+      angular.element('.buttons-interaction').show();
       angular.element('.flashcard-container').show();
       angular.element('.how-to').show();
-      angular.element('.sound-control').show();
+
+      // Center content to the middle of the page
+      window.setTimeout(function() {  
+        Display.centerElement('.page');
+      }, 50); 
     });
   };
 

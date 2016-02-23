@@ -2,62 +2,39 @@
   <nav class="navbar navbar-default header-menu">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar first"></span>
-          <span class="icon-bar second"></span>
-          <span class="icon-bar third"></span>
-        </button>
-        <a class="navbar-brand link-home logo" href="#/" data-toggle="collapse" data-target=".navbar-collapse.in"></a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse links-menu" id="bs-example-navbar-collapse-1" ng-controller='AuthController'>
-
-        <div class="sub-menu container">
-          <ul class="nav navbar-nav navbar-left" bs-active-link>
-
-            <li>
-              <a href="#/categories" data-toggle="collapse" data-target=".navbar-collapse.in">
-                Explore
-              </a>
-            </li>
-
-            <li>
-              <a href="#/quizz-categories" data-toggle="collapse" data-target=".navbar-collapse.in">
-                Practice
-              </a>
-            </li>
-
-            <li>
-              <a href="#/matching-categories" data-toggle="collapse" data-target=".navbar-collapse.in">
-                Play
-              </a>
-            </li>
-
-            <li ng-show='user.isAdmin'>
-              <a href="#/add-flashcard" data-toggle="collapse" data-target=".navbar-collapse.in">
-                <i class="fa fa-plus-circle"></i> Add Flashcard
-              </a>
-            </li>
-
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-
-            <li ng-show='user'>
-              <a data-toggle="collapse" data-target=".navbar-collapse.in">
-                Hello {{ user.username }}
-              </a>
-            </li>
-            <li ng-show='user'>
-              <a href="" data-toggle="collapse" data-target=".navbar-collapse.in" ng-click='logout()'>
-                Logout
-              </a>
-            </li>
-          </ul>
-        </div>
+      <div class="navigation-link-container" ng-controller='AuthController'>
+        <ul>
+          <li class="menu-link">
+            <a href="#/">
+              <i class="fa fa-home"></i>
+            </a>
+          </li>
+          <li class="menu-link">
+            <a href="#/categories">
+              <i class="fa fa-compass"></i>
+            </a>
+          </li>
+          <li class="menu-link">
+            <a href="#/quizz-categories">
+              <i class="fa fa-book"></i>
+            </a>
+          </li>
+          <li class="menu-link">
+            <a href="#/matching-categories">
+              <i class="fa fa-clone"></i>
+            </a>
+          </li>
+          <li ng-show="user.isAdmin" class="menu-link">
+            <a href="#/add-flashcard">
+              <i class="fa fa-plus-circle"></i>
+            </a>
+          </li>
+          <li ng-show="user" class="menu-link">
+            <a href="" ng-click='logout()'>
+              <i class="fa fa-sign-out"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>

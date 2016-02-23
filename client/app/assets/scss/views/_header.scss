@@ -1,124 +1,25 @@
 .header {
   .header-menu {
-    border-radius: 0px;
     position: fixed;
     top: 0px;
-    min-height: 60px;
+    min-height: 70px;
     width: 100%;
     z-index: 999;
     margin-bottom: 0px;
     background-color: $mainColor;
-    border-color: $lightGreyColor;
-
-    .navbar-header {
-      .navbar-brand {
-        position: absolute;
-        left: 50%;
-        margin-left: -25px;
-        padding: 15px 0px;
-        background-image:url('../img/logo/flashcards-app-logo-white-medium.png');
-        width: 50px;
-        height: 35px;
-        background-size: cover;
-        margin-top: 12px;
-      }
-      .navbar-toggle {
-        border-color: #888;
-        border: none;
-        position: relative;
-        float: left;
-        .icon-bar {
-          background-color: $whiteColor;
-          position: relative;
-          transition: all 0.5s ease;
-          &.first{
-            transform:rotate(45deg);
-            top: 5px;
-          }
-          &.second{
-            opacity: 0;
-          }
-          &.third{
-            transform:rotate(-45deg);
-            bottom: 7px;
-          }
-        }
-        &.collapsed {
-          .icon-bar {
-            transform: all 0.5s ease;
-            &.first{
-              transform:rotate(0deg);
-              top: 0px;
-            }
-            &.second{
-              opacity: 1;
-            }
-            &.third{
-              transform:rotate(0deg);
-              bottom: 0px;
-            }
-          }
-        }
-      }
-      .navbar-toggle:hover {
-        background: none;
-        border: none;
-      }
-      .navbar-toggle:focus {
-        background-color: #aaa;
-        background:none;
-      }
-    }
-
-    // Links Navigation Bar
-    .links-menu {
-      margin-right: -15px;
-      margin-left: -15px;
-      .navbar-nav>li>a {
-        color: $whiteColor;
-      }
-
-      .navbar-nav>.active>a, 
-      .navbar-nav>.active>a:hover,
-      .navbar-nav>.active>a:focus {
-        background: none; 
-        font-weight: bold;
-      }
-      @media (min-width:768px){
-        margin-top: 50px;
-        background-color: $whiteColor;
-        @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.1));
-        .navbar-nav>li>a {
-          color: $mainColor;
-
-        }
-      }
-      .navbar-nav>.open>a,
-      .navbar-nav>.open>a:hover,
-      .navbar-nav>.open>a:focus {
-        background: none;
-      }
-
-      .sub-menu {
-        padding-right: 0px;
-        padding-left: 0px;
-        .navbar-left {
-
-        }
-        .navbar-right {
-          @media (min-width:768px){
-            margin-right: 0px;
-          }
-          li {
-            &.divider {
-              display: none;
-              @media (max-width:767px){
-                display: block;
-                background-color: $whiteColor;
-                margin-bottom: 10px;
-                height: 1px;
-              }
-            }
+    border:none;
+    border-bottom: 1px solid lightGreyColor;
+    .navigation-link-container {
+      ul {
+        text-align: center;
+        margin: 30px 0px 0px;
+        .menu-link {
+          display: inline-block;
+          margin: 0px 20px;
+          a {
+            font-size: 28px;
+            line-height: 20px;
+            color: $whiteColor;
           }
         }
       }

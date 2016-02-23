@@ -99,7 +99,7 @@ module.exports = function(grunt) {
         command: 'nodemon server/server.js'
       },
       cordova:{
-        command: 'grunt build && cd mobileApp && cordova run ios'
+        command: 'grunt build && cd mobileApp && cordova run ios --target="iPhone-6"'
       }
     },
 

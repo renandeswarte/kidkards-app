@@ -8,10 +8,9 @@ angular.module('myApp.homepage', ['ngRoute'])
   });
 }])
 
-.controller('homepage', ['$scope', '$http', 'Categories', 'FlashCards', function($scope, $http, Categories, FlashCards) {
+.controller('homepage', ['Display', function(Display) {
 
-  // Set default min height regarding screen height
-  angular.element('.page').css('min-height', window.innerHeight - 40 + 'px');
-
+  // Center content to the middle of the page
+  Display.centerElement('.page');
 
 }]);

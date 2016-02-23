@@ -8,10 +8,12 @@ angular.module('myApp.matchingFlashcardsPage', ['ngRoute'])
   });
 }])
 
-.controller('matchingCategory', ['$scope', '$route', 'FlashCards', '$timeout', function($scope, $route, FlashCards, $timeout) {
+.controller('matchingCategory', ['$scope', '$route', 'FlashCards', '$timeout', 'Display', function($scope, $route, FlashCards, $timeout, Display) {
 
-  // Set default min height regarding screen height
-  angular.element('.page').css('min-height', window.innerHeight - 40 + 'px');
+  // Center loader to the middle of the page
+  Display.centerElement('#loader', true);
+  // Center selection to the middle of the page
+  Display.centerElement('.setting-container', true);
 
   $scope.category = $route.current.params.category;
 
@@ -101,6 +103,11 @@ angular.module('myApp.matchingFlashcardsPage', ['ngRoute'])
       // Start the time counter
       var date = new Date();
       startTime = date.getTime();
+
+      // Center content to the middle of the page
+      window.setTimeout(function() {
+        Display.centerElement('.page');
+      }, 50); 
     });
   };
 
@@ -143,14 +150,20 @@ angular.module('myApp.matchingFlashcardsPage', ['ngRoute'])
             cardTotal -= 2;
             // If no more cards, show the results
             if (cardTotal === 0) {
-              // Show results
-              angular.element('.replay-container').removeClass('hidden');
-              // Hide board
-              angular.element('flashcards-container').addClass('hidden');
+              // Hide board and title
+              angular.element('.flashcards-container').addClass('hidden');
+              angular.element('.page-title').addClass('hidden');
               var stopDate = new Date();
               endTime = stopDate.getTime();
               totalTime = convertTime(endTime - startTime);
               angular.element('#time-spent').html(totalTime);
+
+              // Show results
+              angular.element('.replay-container').removeClass('hidden');
+              // Center content to the middle of the page
+              window.setTimeout(function() {
+                Display.centerElement('.page');
+              }, 50); 
             }
           } else {
             // Reset the both card if no match found

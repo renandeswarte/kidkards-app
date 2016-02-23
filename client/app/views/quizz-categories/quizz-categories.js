@@ -9,11 +9,11 @@ angular.module('myApp.quizzCategoriesPage', ['ngRoute'])
 }])
 
 .controller('quizzShowCategories',
-  ['$scope', '$http', 'FlashCards', 'Categories',
-  function($scope, $http, FlashCards, Categories) {
+  ['$scope', '$http', 'FlashCards', 'Categories', 'Display',
+  function($scope, $http, FlashCards, Categories, Display) {
 
-  // Set default min height regarding screen height
-  angular.element('.page').css('min-height', window.innerHeight - 40 + 'px');
+  // Center loader to the middle of the page
+  Display.centerElement('#loader', true);
 
   $scope.getCategories = function() {
     Categories.getCategoriesList().then(function(categories) {
@@ -30,6 +30,9 @@ angular.module('myApp.quizzCategoriesPage', ['ngRoute'])
       $scope.categories = categoriesSorted;
       // Remove loader
       angular.element('#loader').remove();
+      window.setTimeout(function() {  
+        Display.centerElement('.page');
+      }, 50);
     });
   };
 
