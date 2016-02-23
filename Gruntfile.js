@@ -99,7 +99,7 @@ module.exports = function(grunt) {
         command: 'nodemon server/server.js'
       },
       cordova:{
-        command: 'cd mobileApp && cordova run ios'
+        command: 'grunt build && cd mobileApp && cordova run ios'
       }
     },
 
@@ -122,9 +122,9 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'client/app/assets/pictures',
             src: ['**/*'],
-            dest: 'mobileApp/www  /img/'
+            dest: 'mobileApp/www/img/'
           },
-          // copy picture files to mobile appp folder
+          // copy picture files to mobile app folder
           {
             expand: true,
             cwd: 'client/app/assets/pictures',

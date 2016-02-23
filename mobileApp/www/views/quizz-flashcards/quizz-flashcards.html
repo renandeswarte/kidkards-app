@@ -10,7 +10,7 @@
     <button class="next btn-primary btn" ng-click="nextCard()">Next</button>
   </section>
 
-  <img id="loader" src="assets/pictures/loader.gif">
+  <div id="loader"></div>
 
   <section class="row flashcard-container">
     <div class="flip-container col-xs-12 fadein-effect" ontouch="this.classList.toggle('flipped');" onclick="this.classList.toggle('flipped');" ng-click="sayCardContent(flashcard.definition)">
