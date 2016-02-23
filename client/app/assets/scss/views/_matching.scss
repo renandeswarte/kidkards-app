@@ -18,12 +18,19 @@
         position: relative;
         @include border-radius(5px, 1px, $whiteColor);
         color: $whiteColor;
+        &.x-small {
+          background-color: #00a1e0;
+          margin-bottom: 16.66%;
+        }
         &.small {
-          background-color: $mainColor;
+          background-color: #f39c12;
           margin-bottom: 16.66%;
         }
         &.large {
-          background-color: $greenColor;
+          background-color: #e74c3c;
+        }
+        &.x-large {
+          background-color: #16a085;
         }
         .choice-container {
           @include flexCenter();
@@ -92,8 +99,8 @@
               .front-inner-container {
                 height: 100%;
                 width: 100%;
-                background-image: url('../img/logo/flashcards-app-logo-white-plain-medium.png');
-                background-size: 100px;
+                background-image: url('../img/KidsCardsBG.png');
+                background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
               }

@@ -32,15 +32,14 @@
         <param name="ios-package" value="CDVStatusBar" />
         <param name="onload" value="true" />
     </feature>
-    <preference name="Orientation" value="all" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <name>HelloCordova</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Flashcards application for Kids
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="rdeswarte.sf@gmail.com" href="https://renandeswarte.github.io/">
+        Renan Deswarte
     </author>
     <content src="index.html" />
     <access origin="*" />
