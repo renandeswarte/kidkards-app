@@ -195,7 +195,7 @@ angular.module('myApp.matchingFlashcardsPage', ['ngRoute'])
       timeSpent = time + " seconds";
     } else {
       minutes = parseInt(time / 60);
-      minutes = (minutes === 1) ? minutes + "minute" : minutes + "minutes";
+      minutes = (minutes === 1) ? minutes + " minute" : minutes + " minutes";
       if (time % 60 === 0) {
         seconds = "";
       } else {
