@@ -116,6 +116,7 @@
               }
               .term-container, .bottom-container {
                 @include flexCenter();
+                text-transform: capitalize;
               }
             }
           }
