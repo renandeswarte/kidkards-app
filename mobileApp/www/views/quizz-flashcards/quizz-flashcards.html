@@ -1,16 +1,18 @@
 <div class="container page quizz-category-page fadein-effect" ng-init="initMatching()">
 
-  <section class="top-bar cf"> 
-    <a href="#/quizz-categories" class="backToCategories btn btn-primary" ng-click="nextCard()">Back to categories</a>
-    <h1 class="page-title">{{category}}</h1>
-  </section>
-
-  <section class="buttons-interaction">
-    <button class="previous btn-primary btn" ng-click="previousCard()">Previous</button>
-    <button class="next btn-primary btn" ng-click="nextCard()">Next</button>
-  </section>
+  <h1 class="page-title">{{category}}</h1>
 
   <div id="loader"></div>
+
+  <section class="buttons-interaction fadein-effect">
+    <a href="#/quizz-categories" class="backToCategories btn btn-primary" ng-click="nextCard()"><i class="fa fa-chevron-circle-left"></i></a>
+    <button class="previous btn-primary btn" ng-click="previousCard()">Previous</button>
+    <button class="next btn-primary btn" ng-click="nextCard()">Next</button>
+    <div class="sound-control">
+      <button class="btn btn-primary volume enable" ng-click="toggleSound()" ng-show="sound"><i class="fa fa-volume-up"></i></button>
+      <button class="btn btn-primary volume disable" class="btn" ng-click="toggleSound()" ng-show="!sound"> <i class="fa fa-volume-off"></i></button>
+    </div>
+  </section>
 
   <section class="row flashcard-container">
     <div class="flip-container col-xs-12 fadein-effect" ontouch="this.classList.toggle('flipped');" onclick="this.classList.toggle('flipped');" ng-click="sayCardContent(flashcard.definition)">
@@ -40,8 +42,4 @@
     <p class="no-more-cards hide">No more cards</p>
   </section>
 
-  <section class="sound-control">
-    <button class="btn btn-primary" ng-click="toggleSound()" ng-show="sound"><i class="fa fa-volume-up"></i> Sound On</button>
-    <button class="btn btn-primary" class="btn" ng-click="toggleSound()" ng-show="!sound"> <i class="fa fa-volume-off"></i> Sound Off</button>
-  </section>
 </div>

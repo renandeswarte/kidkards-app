@@ -27,7 +27,7 @@
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
-        <preference name="Orientation" value="all" />
+        <!-- <preference name="Orientation" value="all" /> -->
         
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
