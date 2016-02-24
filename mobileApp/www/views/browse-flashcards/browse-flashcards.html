@@ -1,40 +1,38 @@
 <div class="container page category-page fadein-effect">
 
- <h1 class="page-title">{{category}}</h1>
+  <h1 class="page-title">{{category}}</h1>
 
- <div id="loader"></div>
+  <div id="loader"></div>
 
- <section class="row flashcard-container">
-   <article ng-click="expand($event)" ng-repeat="(key, value) in flashcards" class="flashcard-element fadein-effect col-xs-6 col-sm-4 col-md-3">
-     <!-- <flashcard-element></flashcard-element> -->
-     <div class="flashcard" ng-class=" {{value.isImg}} ? 'flashcard-img' : 'flashcard-text'" ng-controller="updateDeleteController">
-      <!-- Default template for flashcards -->
-      <div class="expand-options">
-        <i class="fa fa-expand"></i>
-        <i class="fa fa-compress"></i>
-      </div>
-
-      <div class="top-container">
-        <div class="picture-container inner-top-container" ng-show="{{value.isImg}}" ng-style="{'background-image':'url({{ value.picture }})'}" onclick=""> 
+  <section class="row flashcard-container">
+    <article ng-click="expand($event)" ng-repeat="(key, value) in flashcards" class="flashcard-element fadein-effect col-xs-6 col-sm-4 col-md-3">
+      <div class="flashcard" ng-class=" {{value.isImg}} ? 'flashcard-img' : 'flashcard-text'" ng-controller="updateDeleteController">
+        <!-- Default template for flashcards -->
+        <div class="expand-options">
+          <i class="fa fa-expand"></i>
+          <i class="fa fa-compress"></i>
         </div>
 
-        <div class="term-container inner-top-container" ng-hide="{{value.isImg}}">
-          <span>{{value.term}}</span>
+        <div class="top-container">
+          <div class="picture-container inner-top-container" ng-show="{{value.isImg}}" ng-style="{'background-image':'url({{ value.picture }})'}" onclick=""> 
+          </div>
+
+          <div class="term-container inner-top-container" ng-hide="{{value.isImg}}">
+            <span>{{value.term}}</span>
+          </div>
+        </div>
+
+        <div class="bottom-container">
+          <div class="definition-container inner-bottom-container">
+            <span>{{value.definition}}</span>
+          </div>
+        </div>
+
+        <div ng-show='user && user.isAdmin' class="update-delete-container cf">
+          <button class="btn update" ng-click="showUpdateModal(key,this)"><i class="fa fa-pencil"></i></button>
+          <button class="btn delete" ng-click="showDeleteModal(key)"><i class="fa fa-trash"></i></button>
         </div>
       </div>
-
-      <div class="bottom-container">
-        <div class="definition-container inner-bottom-container">
-          <span>{{value.definition}}</span>
-        </div>
-      </div>
-
-      <div ng-show='user && user.isAdmin' class="update-delete-container cf">
-        <button class="btn update" ng-click="showUpdateModal(key,this)"><i class="fa fa-pencil"></i></button>
-        <button class="btn delete" ng-click="showDeleteModal(key)"><i class="fa fa-trash"></i></button>
-      </div>
-    </div>
-  </article>
-</section>
-
+    </article>
+  </section>
 </div>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Flashcards</title>
+  <title>Kid Cards</title>
   <link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
   <meta name="description" content="Flashcards application">
 
@@ -20,7 +20,6 @@
   <link rel="shortcut icon" sizes="114x114" href="assets/pictures/logo/icon-large.png"/>
 
   <!-- App style files -->
-  <link rel="stylesheet" href="dist/css/font-awesome.css">
   <link rel="stylesheet" href="dist/css/app.css">
 
 </head>
@@ -32,10 +31,7 @@
   <!-- Main container and views -->
   <div class="main-container container-full" ng-view autoscroll="true"></div>
 
-  <!-- Footer section injection -->
-  <!-- <footer-directive class="footer container-full"></footer-directive> -->
-
-    <!-- Footer section injection -->
+  <!-- Modal section injection -->
   <modal-directive class="modal-container"></modal-directive>
 
   <!-- Javascript assets -->
@@ -50,7 +46,7 @@
   <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
 
   <!-- App Scripts -->
-  <script src="dist/js/app.concat.js"></script>
+  <script src="dist/js/app.min.js"></script>
   
 </body>
 </html>

@@ -2,7 +2,7 @@ angular.module('myApp.matchingFlashcardsPage', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/matching-category/:category', {
-    authenticate: true,
+    authenticate: false,
     templateUrl: 'views/matching-flashcards/matching-flashcards.html',
     controller: 'matchingCategory'
   });
@@ -205,5 +205,4 @@ angular.module('myApp.matchingFlashcardsPage', ['ngRoute'])
     }
     return timeSpent;
   }
-
 }]);

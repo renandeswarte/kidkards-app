@@ -1,19 +1,18 @@
 @import "externals/reset";
 @import "externals/bootstrap";
-// @import "externals/font-awesome";
-@import "externals/animate";
+@import "externals/font-awesome";
 
 @import "tools/variables";
 @import "tools/mixins";
 @import "tools/keyframes-animations";
 
 @import "views/header";
-@import "views/footer";
 @import "views/homepage";
 
 @import "views/flashcard";
 @import "views/categories";
 @import "views/add-flashcard";
+@import "views/login";
 @import "views/modal";
 @import "views/quizz-categories";
 @import "views/quizz-category";

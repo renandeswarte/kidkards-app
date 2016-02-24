@@ -11,5 +11,4 @@ angular.module('myApp.header', [])
   $scope.logout = function() {
     $window.location.href='/auth/logout'
   }
-
 }]);

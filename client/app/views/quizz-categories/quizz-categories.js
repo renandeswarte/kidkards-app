@@ -2,7 +2,7 @@ angular.module('myApp.quizzCategoriesPage', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/quizz-categories', {
-    authenticate: true,
+    authenticate: false,
     templateUrl: 'views/quizz-categories/quizz-categories.html',
     controller: 'quizzShowCategories',
   });

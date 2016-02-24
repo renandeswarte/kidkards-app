@@ -2,7 +2,7 @@ angular.module('myApp.quizzFlashcardsPage', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/quizz-categories/:category', {
-    authenticate: true,
+    authenticate: false,
     templateUrl: 'views/quizz-flashcards/quizz-flashcards.html',
     controller: 'quizzCategory'
   });
