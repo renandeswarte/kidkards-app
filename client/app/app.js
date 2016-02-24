@@ -36,6 +36,7 @@ angular.module('myApp', [
     if (!$window.ga) {
       return;
     }
+    ga('set', 'checkProtocolTask', null);
     $window.ga('send', 'pageview', { page: $location.path() });
   });
 }]);
