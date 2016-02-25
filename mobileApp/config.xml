@@ -37,7 +37,7 @@
         <icon src="res/ios/icon-60@3x.png" width="180" height="180" />
         <!-- iOS 7.0+ -->
         <!-- iPhone / iPod Touch  -->
-        <icon src="res/ios/icon-60.png" width="60" height="60" />
+<!--         <icon src="res/ios/icon-60.png" width="60" height="60" /> -->
         <icon src="res/ios/icon-60@2x.png" width="120" height="120" />
         <!-- iPad -->
         <icon src="res/ios/icon-76.png" width="76" height="76" />
