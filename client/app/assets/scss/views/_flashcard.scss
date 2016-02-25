@@ -51,6 +51,7 @@
         // height: 200px;
         &.picture-container {
           @include backgroundImg();
+          background-color: $whiteColor;
         }
         &.term-container {
           padding: 10px;

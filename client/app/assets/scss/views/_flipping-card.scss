@@ -32,8 +32,7 @@
         &.front {
           // background-color: $whiteColor;
 
-          background-color: $darkGreyColor;
-          @include gradientBackground(#464e5b,#333333);
+          background-color: $whiteColor;
           @include border-radius(3px, 1px, $lightGreyColor);
           @include browserAdaptation(transform, rotateX(0deg));
 
@@ -56,10 +55,18 @@
           .term-container {
             padding: 10px;
             @include flexCenter();
-
+            background-color: $darkGreyColor;
+            @include gradientBackground(#464e5b,#333333);
             position: absolute;
             @include absolutePos(0px,0px,0px,0px);
             color:$whiteColor;
+            display: none;
+            &.displayed {
+              // Override Angular ng-hide
+              display: flex !important;
+              display: -webkit-flex !important;
+              display: -moz-flex !important;
+            }
           }
         }
         &.back {
