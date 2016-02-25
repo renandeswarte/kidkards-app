@@ -143,6 +143,7 @@ angular.module('myApp.quizzFlashcardsPage', ['ngRoute'])
     }
   };
 
+  // allow user to swipe cards
   $('.flip-container').on('swiperight', function() {
     $scope.previousCard();
     $scope.$apply();
@@ -153,7 +154,6 @@ angular.module('myApp.quizzFlashcardsPage', ['ngRoute'])
     $scope.$apply();
     $('.how-to.swipe').fadeOut();
   });
-
 }])
 
 // Used to update the background image of the flashcards
