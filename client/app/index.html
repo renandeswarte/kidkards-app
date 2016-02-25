@@ -57,7 +57,12 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-74275735-2', 'auto');
-    ga('send', 'pageview');
+    ga('set', 'checkProtocolTask', null);
+    ga('send', 'screenview', {
+      'appName': 'Kidkards',
+      'appVersion': '1.0',
+      'screenName': 'Home'
+    });
   </script>
   
 </body>

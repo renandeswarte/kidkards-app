@@ -48,7 +48,12 @@
 
         ga('create', 'UA-74275735-2', 'auto');
         ga('set', 'checkProtocolTask', null);
-        ga('send', 'pageview');
+        // ga('send', 'pageview');
+        ga('send', 'screenview', {
+          'appName': 'Kidkards',
+          'appVersion': '1.0',
+          'screenName': 'Home'
+        });
       </script>
       
     </body>

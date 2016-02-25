@@ -36,7 +36,11 @@ angular.module('myApp', [
     if (!$window.ga) {
       return;
     }
-    ga('set', 'checkProtocolTask', null);
-    $window.ga('send', 'pageview', { page: $location.path() });
+    $window.ga('set', 'checkProtocolTask', null);
+    $window.ga('send', 'screenview', {
+      'appName': 'Kidkards',
+      'appVersion': '1.0',
+      'screenName': $location.path()
+    });
   });
 }]);
