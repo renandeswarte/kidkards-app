@@ -20,7 +20,9 @@ angular.module('myApp', [
   'myApp.quizzFlashcardsPage',
   'myApp.updateDeleteCard',
   'myApp.matchingCategoriesPage',
-  'myApp.matchingFlashcardsPage'
+  'myApp.matchingFlashcardsPage',
+  'myApp.informationsPage',
+  'myApp.privacyPage'
   ])
 
 // Default route redirection

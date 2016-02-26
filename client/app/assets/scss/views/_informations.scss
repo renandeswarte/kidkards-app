@@ -1,6 +1,6 @@
-.home-page {
+.informations-page {
   .links-container {
-    .home-links {
+    .informations-links {
       margin-bottom: 15px;
       padding-bottom: 35%;
       position: relative;
@@ -14,29 +14,17 @@
         font-weight: bold;
 
       }
-      &.categories {
+      &.email-link {
         span {
           background-color: #16A085;   
         }
       }
-      &.quizz {
-        span {
-          background-color: #00a1e0;   
-        }
-      }
-      &.matching {
+      &.privacy-link {
         span {
           background-color: #E67E22;   
         }
       }
     }
-  }
-  .informations-link {
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
-    font-size: 30px;
-    color: rgba(0,0,0,0.4);
   }
 }
 
