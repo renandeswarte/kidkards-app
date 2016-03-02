@@ -8,7 +8,7 @@ angular.module('myApp.browseFlashcardsPage', ['ngRoute'])
   });
 }])
 
-.controller('browseFlashcards', ['$scope', '$route', 'FlashCards', 'Display', function($scope, $route, FlashCards, Display) {
+.controller('browseFlashcards', ['$scope', '$route', 'FlashCards', 'Display', '$timeout', function($scope, $route, FlashCards, Display, $timeout) {
 
   // Center loader to the middle of the page
   Display.centerElement('#loader', true);
@@ -26,27 +26,51 @@ angular.module('myApp.browseFlashcardsPage', ['ngRoute'])
     }, 50); 
   });
 
-  var menuHeight = 70 + 20;
   var initialCardHeight;
+  $scope.expandedCard = false;
 
   $scope.expand = function($event) {
     initialCardHeight = initialCardHeight || angular.element($event.currentTarget).height();
 
     if(document.body.clientWidth < 480 ) {
-      angular.element($event.currentTarget).toggleClass('expanded');
-      var elementHeight = angular.element($event.currentTarget).height();
       var position = angular.element($event.currentTarget).offset();
 
-      if (position.left > 0) {
-        angular.element($event.currentTarget).addClass('right-element-expanded');
-        $('html, body').animate({
-          scrollTop: position.top + elementHeight - menuHeight
-        }, 500);
-      } else if (angular.element($event.currentTarget).hasClass('right-element-expanded')) {
-        angular.element($event.currentTarget).removeClass('right-element-expanded');
-        $('html, body').animate({
-          scrollTop: position.top - initialCardHeight - menuHeight
-        }, 500);
+      if (angular.element($event.currentTarget).hasClass('expanded')) {
+        // Check is card is already expanded
+        angular.element($event.currentTarget).css('transform', 'none');
+        if (angular.element($event.currentTarget).hasClass('right-element-expanded')) {
+          angular.element($event.currentTarget).removeClass('right-element-expanded');  
+        }
+        $timeout(function(){angular.element($event.currentTarget).removeClass('expanded')}, 500);
+        $scope.expandedCard = false;
+      } else if (position.left === 0 && !angular.element($event.currentTarget).hasClass('expanded')) {
+        // Lfet Card case
+        // Check if other cards are already expanded
+        if ($scope.expandedCard) {
+          angular.element('.flashcard-element.expanded')
+          .addClass('previous')
+          .removeClass('expanded')
+          .removeClass('right-element-expanded')
+          .css('transform', 'none');
+        }
+        angular.element($event.currentTarget).css('transform', 'scaleX(2) scaleY(2) translateX(25%) translateY(25%)');
+        angular.element($event.currentTarget).addClass('expanded');
+        $scope.expandedCard = true;
+        $timeout(function(){angular.element('.flashcard-element.previous').removeClass('previous')}, 500);
+      } else if (position.left > 0) {
+        // Right Card case
+        // Check if other cards are already expanded
+        if ($scope.expandedCard) {
+          angular.element('.flashcard-element.expanded')
+          .addClass('previous')
+          .removeClass('expanded')
+          .removeClass('right-element-expanded')
+          .css('transform', 'none');
+        }
+        angular.element($event.currentTarget).addClass('expanded').addClass('right-element-expanded');
+        angular.element($event.currentTarget).css('transform', 'scaleX(2) scaleY(2) translateX(-25%) translateY(25%)');
+        $scope.expandedCard = true;
+        $timeout(function(){angular.element('.flashcard-element.previous').removeClass('previous')}, 500);
       }
     }
   }

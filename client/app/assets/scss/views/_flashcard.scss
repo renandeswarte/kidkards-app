@@ -1,7 +1,12 @@
 .flashcard-element {
-  @include transition(width, 0.3s, ease);
+  // @include transition(width, 0.3s, ease);
+  transform: scaleX(1) scaleY(1);
+  transition-duration: 0.5s;
+  z-index: 0;
   &.expanded {
-    width: 100%;
+    // width: 100%;
+    z-index: 10;
+    // transform: scaleX(2) scaleY(2) translateX(25%);
     .flashcard {
       .expand-options {
         .fa-expand {
@@ -13,17 +18,21 @@
       }
     }
   }
+  &.previous {
+    z-index: 4;
+  }
   .flashcard {
     position: relative;
-    @include border-radius(10px, 1px, $lightGreyColor);
+    background-color: $whiteColor;
     margin-bottom: 20px;
     overflow: hidden;
     @include box-shadow(0px, 0px, 2px, 1px, rgba(0,0,0,0.1));
+    @include border-radius(10px, 1px, $lightGreyColor);
     .expand-options {
       position: absolute;
       top: 5px;
       right: 5px;
-      z-index: 99;
+      z-index: 3;
       background-color: rgba(0,0,0,0.2);
       font-size: 12px;
       line-height: 12px;
