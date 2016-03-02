@@ -1,12 +1,9 @@
 .flashcard-element {
-  // @include transition(width, 0.3s, ease);
   transform: scaleX(1) scaleY(1);
   transition-duration: 0.5s;
   z-index: 0;
   &.expanded {
-    // width: 100%;
     z-index: 10;
-    // transform: scaleX(2) scaleY(2) translateX(25%);
     .flashcard {
       .expand-options {
         .fa-expand {

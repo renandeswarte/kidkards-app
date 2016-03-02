@@ -41,36 +41,40 @@ angular.module('myApp.browseFlashcardsPage', ['ngRoute'])
         if (angular.element($event.currentTarget).hasClass('right-element-expanded')) {
           angular.element($event.currentTarget).removeClass('right-element-expanded');  
         }
-        $timeout(function(){angular.element($event.currentTarget).removeClass('expanded')}, 500);
+        $timeout(function(){angular.element($event.currentTarget).css('z-index', '0').removeClass('expanded')}, 500);
         $scope.expandedCard = false;
       } else if (position.left === 0 && !angular.element($event.currentTarget).hasClass('expanded')) {
-        // Lfet Card case
+        // Leftt Card case
         // Check if other cards are already expanded
         if ($scope.expandedCard) {
           angular.element('.flashcard-element.expanded')
+          .css('z-index', '4')
           .addClass('previous')
           .removeClass('expanded')
           .removeClass('right-element-expanded')
           .css('transform', 'none');
         }
+        angular.element($event.currentTarget).css('z-index', '10');
         angular.element($event.currentTarget).css('transform', 'scaleX(2) scaleY(2) translateX(25%) translateY(25%)');
         angular.element($event.currentTarget).addClass('expanded');
         $scope.expandedCard = true;
-        $timeout(function(){angular.element('.flashcard-element.previous').removeClass('previous')}, 500);
+        $timeout(function(){angular.element('.flashcard-element.previous').css('z-index', '0').removeClass('previous')}, 500);
       } else if (position.left > 0) {
         // Right Card case
         // Check if other cards are already expanded
         if ($scope.expandedCard) {
           angular.element('.flashcard-element.expanded')
+          .css('z-index', '4')
           .addClass('previous')
           .removeClass('expanded')
           .removeClass('right-element-expanded')
           .css('transform', 'none');
         }
+        angular.element($event.currentTarget).css('z-index', '10');
         angular.element($event.currentTarget).addClass('expanded').addClass('right-element-expanded');
         angular.element($event.currentTarget).css('transform', 'scaleX(2) scaleY(2) translateX(-25%) translateY(25%)');
         $scope.expandedCard = true;
-        $timeout(function(){angular.element('.flashcard-element.previous').removeClass('previous')}, 500);
+        $timeout(function(){angular.element('.flashcard-element.previous').css('z-index', '0').removeClass('previous')}, 500);
       }
     }
   }
