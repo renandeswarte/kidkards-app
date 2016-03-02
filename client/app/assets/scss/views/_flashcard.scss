@@ -48,7 +48,7 @@
       }
     }
     .top-container {
-      border-bottom: 1px solid $darkGreyColor;
+      border-bottom: 1px solid $lightGreyColor;
       background-color: $darkGreyColor;
       // Gradient Background
       @include gradientBackground(#464e5b,#333333);
