@@ -9,7 +9,6 @@ angular.module('myApp.browseFlashcardsPage', ['ngRoute'])
 }])
 
 .controller('browseFlashcards', ['$scope', '$route', 'FlashCards', 'Display', '$timeout', function($scope, $route, FlashCards, Display, $timeout) {
-
   // Center loader to the middle of the page
   Display.centerElement('#loader', true);
 
@@ -55,9 +54,9 @@ angular.module('myApp.browseFlashcardsPage', ['ngRoute'])
           .css('transform', 'none');
         }
         angular.element($event.currentTarget).css('z-index', '10');
-        angular.element($event.currentTarget).css('transform', 'scaleX(2) scaleY(2) translateX(25%) translateY(25%)');
         angular.element($event.currentTarget).addClass('expanded');
         $scope.expandedCard = true;
+        $timeout(function(){angular.element($event.currentTarget).css('transform', 'scaleX(2) scaleY(2) translateX(25%) translateY(25%)')}, 100);
         $timeout(function(){angular.element('.flashcard-element.previous').css('z-index', '0').removeClass('previous')}, 500);
       } else if (position.left > 0) {
         // Right Card case
@@ -72,8 +71,8 @@ angular.module('myApp.browseFlashcardsPage', ['ngRoute'])
         }
         angular.element($event.currentTarget).css('z-index', '10');
         angular.element($event.currentTarget).addClass('expanded').addClass('right-element-expanded');
-        angular.element($event.currentTarget).css('transform', 'scaleX(2) scaleY(2) translateX(-25%) translateY(25%)');
         $scope.expandedCard = true;
+        $timeout(function(){angular.element($event.currentTarget).css('transform', 'scaleX(2) scaleY(2) translateX(-25%) translateY(25%)')}, 100);
         $timeout(function(){angular.element('.flashcard-element.previous').css('z-index', '0').removeClass('previous')}, 500);
       }
     }
