@@ -6,43 +6,51 @@
 
   <section class="buttons-interaction fadein-effect">
     <a href="#/quizz-categories" class="backToCategories btn btn-primary" ng-click="nextCard()"><i class="fa fa-chevron-circle-left"></i></a>
-    <button class="previous btn-primary btn" ng-click="previousCard()">Previous</button>
-    <button class="next btn-primary btn" ng-click="nextCard()">Next</button>
-    <div class="sound-control">
-      <button class="btn btn-primary volume enable" ng-click="toggleSound()" ng-show="sound"><i class="fa fa-volume-up"></i></button>
-      <button class="btn btn-primary volume disable" class="btn" ng-click="toggleSound()" ng-show="!sound"> <i class="fa fa-volume-off"></i></button>
-    </div>
-  </section>
+  <!-- <button class="previous btn-primary btn" ng-click="previousCard()">Previous</button>
+  <button class="next btn-primary btn" ng-click="nextCard()">Next</button> -->
+  <div class="sound-control">
+    <button class="btn btn-primary volume enable" ng-click="toggleSound()" ng-show="sound"><i class="fa fa-volume-up"></i></button>
+    <button class="btn btn-primary volume disable" class="btn" ng-click="toggleSound()" ng-show="!sound"> <i class="fa fa-volume-off"></i></button>
+  </div>
+</section>
 
-  <section class="row flashcard-container">
-    <div class="flip-container col-xs-12 fadein-effect" ontouch="this.classList.toggle('flipped');" onclick="this.classList.toggle('flipped');" ng-click="sayCardContent(flashcard.definition)">
-      <div class="flipper">
-        <!-- Front side of the card -->
-        <div class="side front">
-          <!-- Image Term Container -->
-          <div class="picture-container inner-top-container" back-img="{{flashcard.picture}}"></div>   
-          <!-- Text Term Container -->
-          <div class="term-container inner-top-container">
-            <span>{{flashcard.term}}</span>
+<!-- Slider main container -->
+<section class="swiper-container">
+
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide" ng-repeat="flashcard in flashcards" on-finish-render="ngRepeatFinished">
+      <div class="flip-container inner-slide" ng-click="flip($event, flashcard.definition)">
+        <div class="flipper">
+          <!-- Front side of the card -->
+          <div class="side front">
+            <!-- Image Term Container -->
+            <div class="picture-container inner-top-container" style="background-image:url({{flashcard.picture}})" ng-show="{{flashcard.isImg}}"></div>   
+            <!-- Text Term Container -->
+            <div class="term-container inner-top-container" ng-show="{{!flashcard.isImg}}">
+              <span>{{flashcard.term}}</span>
+            </div>
           </div>
-        </div>
-        <!-- Back side of the card -->
-        <div class="side back">
-          <span class="card-definition">{{flashcard.definition}}</span>
+          <!-- Back side of the card -->
+          <div class="side back">
+            <span class="card-definition">{{flashcard.definition}}</span>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="how-to fadein-effect">
-    <p>Touch the card to see the answer</p>
-  </section>
-  <section class="how-to swipe fadein-effect">
-    <p>Swipe to change the card</p>
-  </section>
+<section class="how-to fadein-effect">
+  <p>Touch the card to see the answer</p>
+</section>
+<section class="how-to swipe fadein-effect">
+  <p>Swipe to change the card</p>
+</section>
 
-  <section class="no-more-cards fadein-effect">
-    <p class="no-more-cards hide">No more cards</p>
-  </section>
+<section class="no-more-cards fadein-effect">
+  <p class="no-more-cards hide">No more cards</p>
+</section>
 
 </div>

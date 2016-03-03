@@ -14,24 +14,20 @@
       }
     }
     .flipper {
-      position: absolute;
       @include absolutePos(0px,0px,0px,0px);
-          @include browserAdaptation(transition, 0.6s);
-          @include browserAdaptation(transform-style, preserve-3d);
+      @include browserAdaptation(transition, 0.6s);
+      @include browserAdaptation(transform-style, preserve-3d);
 
       .side {
-          @include browserAdaptation(backface-visibility, hidden);
-          @include browserAdaptation(transition, 0.6s);
-          @include browserAdaptation(transform-style, preserve-3d);
-          @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.1));
-
+        @include browserAdaptation(backface-visibility, hidden);
+        @include browserAdaptation(transition, 0.6s);
+        @include browserAdaptation(transform-style, preserve-3d);
+        @include box-shadow(1px, 1px, 2px, 1px, rgba(0,0,0,0.1));
         position: absolute;
         top: 0;
         left: 0;
 
         &.front {
-          // background-color: $whiteColor;
-
           background-color: $whiteColor;
           @include border-radius(3px, 1px, $lightGreyColor);
           @include browserAdaptation(transform, rotateX(0deg));

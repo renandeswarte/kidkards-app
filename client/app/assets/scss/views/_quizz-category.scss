@@ -1,19 +1,4 @@
 .quizz-category-page {
-  .flashcard-container{
-    display: none;
-    text-align: center;
-    .flip-container{
-      width: 100%;
-      max-width: 300px;
-      height: 300px;
-      float: none;
-      margin: 0 auto;
-    }
-    .front, .back {
-      width: 100%;
-      height: 100%;
-    }
-  }
 
   .buttons-interaction {
     display: none;
@@ -26,10 +11,10 @@
     }
     .backToCategories {
       border-radius: 50%;
-        font-size: 20px;
-        width: 42px;
-        padding-top: 8px;
-        margin-right: 20px;
+      font-size: 20px;
+      width: 42px;
+      padding-top: 8px;
+      margin-right: 20px;
     }
     .sound-control {
       margin-left: 20px;
@@ -39,6 +24,50 @@
         font-size: 20px;
         width: 42px;
         padding-top: 8px;
+      }
+    }
+  }
+
+  .swiper-container {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    overflow: visible;
+    opacity: 0;
+    transition: opacity 1s ease;
+    .swiper-slide {
+      width: 100%;
+      max-width: 250px;
+      height: 250px;
+      border-radius: 15px;
+      @media (min-width:480px){
+        max-width: 300px;
+        height: 300px;
+      }
+      .flip-container.inner-slide {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        .flipper {
+          .side {
+            &.front {
+              width: 100%;
+              height: 100%;
+              .picture-container {
+                display: block;
+              }
+              .term-container {
+                @include flexCenter();
+              }
+            }
+            &.back {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
       }
     }
   }
@@ -62,3 +91,4 @@
     }
   }
 } 
+

@@ -1,6 +1,8 @@
 @import "externals/reset";
 @import "externals/bootstrap";
 @import "externals/font-awesome";
+@import "externals/swiper";
+
 
 @import "tools/variables";
 @import "tools/mixins";
@@ -37,6 +39,9 @@ html {
 
 body {
   background: none;
+  .main-container {
+    overflow: hidden;
+  }
 }
 
 // Override Global Buttons style
