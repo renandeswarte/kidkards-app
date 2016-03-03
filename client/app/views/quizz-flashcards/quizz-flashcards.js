@@ -77,9 +77,6 @@ angular.module('myApp.quizzFlashcardsPage', ['ngRoute'])
     window.setTimeout(function() {  
       Display.centerElement('.page');
       angular.element('.swiper-container').css('opacity','1');
-
-      // Display page elements
-         // Display page elements
     }, 50); 
   });
 
