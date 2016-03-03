@@ -36,13 +36,13 @@
     opacity: 0;
     transition: opacity 1s ease;
     .swiper-slide {
-      width: 100%;
+      width: 100% !important;
       max-width: 250px;
       height: 250px;
       border-radius: 15px;
       @media (min-width:480px){
-        max-width: 300px;
-        height: 300px;
+        max-width: 350px;
+        height: 350px;
       }
       .flip-container.inner-slide {
         position: absolute;

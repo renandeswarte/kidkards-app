@@ -53,17 +53,24 @@ angular.module('myApp.quizzFlashcardsPage', ['ngRoute'])
 
   $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
     $scope.swiper = new Swiper('.swiper-container', {
-      effect: 'coverflow',
-      centeredSlides: true,
+      // coverflow effect
+      // effect: 'coverflow',
+      // coverflow: {
+      //   rotate: 50,
+      //   stretch: 0,
+      //   depth: 100,
+      //   modifier: 1,
+      //   slideShadows : false
+      // },
+      // centeredSlides: true,
+      // slidesPerView: 'auto',
+      // followFinger: true,
+      // Regular display
       slidesPerView: 'auto',
-      followFinger: true,
-      coverflow: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows : false
-      }
+      centeredSlides: true,
+      spaceBetween: 30,
+      // Loop cards enabled
+      loop: true
     });
 
     // Remove loader
@@ -79,6 +86,14 @@ angular.module('myApp.quizzFlashcardsPage', ['ngRoute'])
       angular.element('.swiper-container').css('opacity','1');
     }, 50); 
   });
+
+  // Next and Prev clisk listeners, auto center selected cards
+  angular.element('body').on('click', ' .swiper-slide-next', function() {
+    $scope.swiper.slideNext();
+  });
+  angular.element('body').on('click', ' .swiper-slide-prev', function() {
+    $scope.swiper.slidePrev();
+  })
 
   // Toggle sound on card reveal
   $scope.toggleSound = function() {
